@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme{
+    --font-sans: "Aldrich", sans-serif;;
+}
+
+@theme inline {
+    --color-primary-50: color-mix(in oklab, var(--color-primary), white 90%);
+    --color-primary-100: color-mix(in oklab, var(--color-primary), white 80%);
+    --color-primary-200: color-mix(in oklab, var(--color-primary), white 60%);
+    --color-primary-300: color-mix(in oklab, var(--color-primary), white 40%);
+    --color-primary-400: color-mix(in oklab, var(--color-primary), white 20%);
+    --color-primary-500: var(--color-primary);
+    --color-primary-600: color-mix(in oklab, var(--color-primary), black 10%);
+    --color-primary-700: color-mix(in oklab, var(--color-primary), black 25%);
+    --color-primary-800: color-mix(in oklab, var(--color-primary), black 45%);
+    --color-primary-900: color-mix(in oklab, var(--color-primary), black 65%);
+    --color-primary-950: color-mix(in oklab, var(--color-primary), black 80%);
+
+
+    --spacing-container: 75rem;
+    --radius-large: 1rem;
+}
+
+:root {
+    --color-primary: oklch(.75 .14 250);
+}
