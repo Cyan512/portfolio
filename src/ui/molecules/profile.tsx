@@ -2,6 +2,7 @@ import {ImageWrapper} from "@/ui/atoms/image-wrapper.tsx";
 import {Link} from "react-router-dom"
 import {ProfileData} from "@/data/profile-data.ts";
 import {PiUserListBold} from "react-icons/pi";
+import {cn} from "@/utils/cn.ts";
 
 export function Profile() {
     const config = ProfileData;
@@ -31,7 +32,10 @@ export function Profile() {
                                 key={item.name}
                                 href={item.url}
                                 target="_blank"
-                                className={`transition flex items-center justify-center rounded-lg h-10 active:scale-95 ${isSingle ? "gap-2 px-3 font-bold" : "w-10"}`}
+                                className={cn("transition flex items-center justify-center rounded-lg h-10 active:scale-95",
+                                isSingle
+                                ? "gap-2 px-3 font-bold"
+                                : "w-10")}
                             >
                                 <Icon className="text-[1.5rem]"/>
                                 {isSingle && item.name}
