@@ -12,6 +12,7 @@ const HomePage = lazy(() => import("@/ui/pages/home/Page"))
 const AboutPage = lazy(() => import("@/ui/pages/about/Page"))
 const ProjectsPage = lazy(() => import("@/ui/pages/projects/Page"))
 const NotFoundPage = lazy(() => import("@/ui/pages/notFound/Page"))
+const ProjectDetailsPage = lazy(() => import("@/ui/templates/project-details-page"))
 
 export const routes: RouteConfig[] = [
     {
@@ -29,6 +30,10 @@ export const routes: RouteConfig[] = [
     {
         path: "/projects",
         element: <ProjectsPage/>
+    },
+    {
+        path: "/projects/:slug",
+        element: <ProjectDetailsPage/>
     },
     {
         path: "*",
