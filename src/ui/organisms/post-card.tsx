@@ -33,7 +33,7 @@ export function PostCard({className}: PostCardProps) {
                         </div>
                     </div>
                 </div>
-                <Link to="#"
+                <Link to="1"
                       className="hidden md:flex items-center justify-center bg-primary-300 w-[3.25rem] absolute right-3 top-3 bottom-3 rounded-xl">
                     <FaChevronRight className="transition text-primary-500 text-4xl mx-auto"/>
                 </Link>
