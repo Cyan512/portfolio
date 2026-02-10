@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 @import "tailwindcss";
-@import "@/styles/markdown.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -30,3 +29,4 @@
     --color-primary: oklch(.75 .14 250);
 }
 
+@import "@/styles/markdown.css";

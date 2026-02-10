@@ -1,5 +1,5 @@
 @layer components {
-    /* Base Typography */
+    /* Estilos base para Markdown */
     .prose {
         font-family: var(--font-sans);
         max-width: 100%;
@@ -25,54 +25,70 @@
         @apply text-xl font-semibold mt-8 mb-3;
     }
 
-    /* Links */
+    /* Enlaces */
     .prose a {
         @apply underline underline-offset-4 decoration-primary-500;
     }
 
-    .prose a:hover {
-        @apply decoration-primary-300;
-    }
-
-    /* Code inline */
+    /* Código inline */
     .prose code {
-        @apply rounded px-1 py-0.5 text-sm;
-        background-color: color-mix(
-                in oklab,
-                var(--color-primary),
-                black 90%
-        );
+        @apply rounded px-1 py-0.5 text-sm bg-primary-50 dark:bg-primary-900 text-primary-600 dark:text-primary-300;
     }
 
-    /* Code block */
+    /* Bloques de código */
     .prose pre {
-        @apply rounded-xl p-4 overflow-x-auto;
-        background-color: var(--tw-prose-pre-bg);
-        border: 1px solid color-mix(
-                in oklab,
-                var(--color-primary),
-                black 70%
-        );
+        @apply rounded-xl p-4 overflow-x-auto bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100;
     }
 
-    /* Lists */
-    .prose ul {
-        @apply list-disc pl-6;
-    }
-
-    .prose ol {
-        @apply list-decimal pl-6;
-    }
-
-    /* Blockquote */
+    /* Blockquotes */
     .prose blockquote {
-        @apply border-l-4 pl-4 italic;
-        border-color: var(--color-primary-500);
+        @apply border-l-4 pl-4 italic border-primary-500 text-gray-700 dark:text-gray-300;
+    }
+
+    /* Admonitions */
+    .prose .admonition {
+        @apply p-4 rounded-lg mb-6;
+    }
+    .prose .admonition.note {
+        @apply bg-blue-50 border-l-4 border-blue-400 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+    }
+    .prose .admonition.tip {
+        @apply bg-green-50 border-l-4 border-green-400 text-green-800 dark:bg-green-900 dark:text-green-200;
+    }
+    .prose .admonition.important {
+        @apply bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+    }
+    .prose .admonition.warning {
+        @apply bg-red-50 border-l-4 border-red-400 text-red-800 dark:bg-red-900 dark:text-red-200;
+    }
+    .prose .admonition.caution {
+        @apply bg-purple-50 border-l-4 border-purple-400 text-purple-800 dark:bg-purple-900 dark:text-purple-200;
+    }
+
+    /* Spoilers */
+    .prose .spoiler {
+        @apply relative inline-block cursor-pointer bg-gray-300 dark:bg-gray-700 rounded px-1 select-none;
+    }
+    .prose .spoiler:hover {
+        @apply text-gray-900 dark:text-gray-100;
+    }
+
+    /* GitHub Cards */
+    .prose .github-card {
+        @apply border rounded-lg p-4 shadow hover:shadow-lg transition-shadow bg-white dark:bg-gray-800 mb-6;
+    }
+    .prose .github-card h3 {
+        @apply font-semibold text-lg mb-2;
+    }
+    .prose .github-card p {
+        @apply text-sm text-gray-600 dark:text-gray-400;
+    }
+    .prose .github-card a {
+        @apply text-blue-500 hover:underline mt-2 inline-block;
     }
 }
 
-/* Dark mode tweaks */
+/* Dark mode overrides */
 .dark .prose {
     --tw-prose-body: #e5e7eb;
-    --tw-prose-pre-bg: color-mix(in oklab, var(--color-primary), black 88%);
 }
